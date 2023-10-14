@@ -1,76 +1,115 @@
+<!-- This line declares the document to be HTML5 -->
 <!DOCTYPE html>
+
+<!-- The HTML document starts from here. "lang=en" specifies that the language used is English. -->
 <html lang="en">
+
+<!-- The <head> element contains meta-information about the document and links to external resources. -->
 <head>
+    <!-- This sets the character set of the document to UTF-8, which covers almost all Unicode characters. -->
     <meta charset="UTF-8">
+
+    <!-- This ensures the webpage is optimized for mobile devices, scaling the viewport to the device's width and setting the initial zoom level. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- This links to the Bootstrap CSS library, a popular framework for designing responsive and modern web pages. -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!-- Custom styles are added here. -->
     <style>
+        /* Styling the body of the webpage. */
         body {
-            background-color: #f7f7f7;
-            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7; /* Setting a light grey background color. */
+            font-family: 'Arial', sans-serif; /* Setting the default font to Arial. */
         }
         
+        /* Styling the container that wraps our form. */
         .container {
-            max-width: 40%;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            margin: auto;
+            max-width: 40%; /* Limiting the container's width to 40% of the viewport width. */
+            background-color: #ffffff; /* Setting a white background. */
+            padding: 20px; /* Adding space around the content inside the container. */
+            border-radius: 8px; /* Rounding the container's corners. */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow for a 3D effect. */
+            margin: auto; /* Center aligning the container. */
         }
     
+        /* Styling the main header (h2). */
         h2 {
-            color: #333;
+            color: #333; /* Setting the color to a dark grey. */
         }
-    
+
+        /* Styling the button. */
         button {
-            transition: background-color 0.3s, transform 0.3s;
-            align-items: center;
+            transition: background-color 0.3s, transform 0.3s; /* Adding smooth transitions for hover effects. */
         }
     
+        /* Styling the button on hover. */
         button:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
+            background-color: #0056b3; /* Changing the button color to a deeper blue. */
+            transform: scale(1.05); /* Making the button slightly larger when hovered. */
         }
     
+        /* Initially hiding the total display. */
         h3 {
-            display: none;
-            transition: opacity 0.5s;
-            opacity: 0;
+            display: none; /* Hiding the element. */
+            transition: opacity 0.5s; /* Adding a transition effect for fading. */
+            opacity: 0; /* Setting initial opacity to 0. */
         }
     
+        /* Styling the total display when it's set to be shown. */
         h3.show {
-            display: block;
-            opacity: 1;
+            display: block; /* Showing the element as a block. */
+            opacity: 1; /* Setting full opacity. */
         }
     </style>
     
+    <!-- Setting the title of the webpage. This appears on the browser tab. -->
     <title>Drive Through Order</title>
 </head>
+
+<!-- The <body> tag contains the content of the document that's displayed in the browser. -->
 <body>
 
+<!-- This is a container that wraps around our content to center it and add padding. -->
 <div class="container mt-5">
+    <!-- Main heading displayed at the top of the form. -->
     <h2 class="text-center mb-4">Fast Food Drive Through</h2>
+    
+    <!-- This is our main order form. -->
     <form id="orderForm">
+        <!-- Each "form-group" is a container for a label and an input, enhancing the layout. -->
         <div class="form-group">
+            <!-- This is a label for the burger input. -->
             <label for="burgers">Number of Burgers ($1 each):</label>
+            <!-- Input field for the number of burgers. -->
             <input type="number" class="form-control" id="burgers" placeholder="Enter number of burgers" min="0">
         </div>
+
+        <!-- Similarly, this is for fries. -->
         <div class="form-group">
             <label for="fries">Number of Fries ($2 each):</label>
             <input type="number" class="form-control" id="fries" placeholder="Enter number of fries" min="0">
         </div>
+
+        <!-- And this one's for sodas. -->
         <div class="form-group">
             <label for="sodas">Number of Sodas ($2.50 each):</label>
             <input type="number" class="form-control" id="sodas" placeholder="Enter number of sodas" min="0">
         </div>
+
+        <!-- Button to calculate the total. It's inside a form-group for consistent styling. -->
         <div class="form-group text-center">
             <button type="button" class="btn btn-primary" id="btnClick">Calculate Total</button>
         </div>
-            </form>
+    </form>
+    
+    <!-- This displays the total cost after the user clicks the button. It's initially hidden and will be shown by our JavaScript code. -->
     <h3 class="text-center mt-4">Your Total is: <span id="totalCost">$0.00</span></h3>
 </div>
 
+<!-- Linking our external JavaScript file which contains the functionality for our form. -->
 <script src="script.js"></script>
 </body>
+
+<!-- Ending the HTML document. -->
 </html>

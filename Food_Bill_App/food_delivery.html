@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .container {
+            max-width: 40%;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+        }
+    
+        h2 {
+            color: #333;
+        }
+    
+        button {
+            transition: background-color 0.3s, transform 0.3s;
+            align-items: center;
+        }
+    
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+    
+        h3 {
+            display: none;
+            transition: opacity 0.5s;
+            opacity: 0;
+        }
+    
+        h3.show {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+    
+    <title>Drive Through Order</title>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Fast Food Drive Through</h2>
+    <form id="orderForm">
+        <div class="form-group">
+            <label for="burgers">Number of Burgers ($1 each):</label>
+            <input type="number" class="form-control" id="burgers" placeholder="Enter number of burgers" min="0">
+        </div>
+        <div class="form-group">
+            <label for="fries">Number of Fries ($2 each):</label>
+            <input type="number" class="form-control" id="fries" placeholder="Enter number of fries" min="0">
+        </div>
+        <div class="form-group">
+            <label for="sodas">Number of Sodas ($2.50 each):</label>
+            <input type="number" class="form-control" id="sodas" placeholder="Enter number of sodas" min="0">
+        </div>
+        <div class="form-group text-center">
+            <button type="button" class="btn btn-primary" id="btnClick">Calculate Total</button>
+        </div>
+            </form>
+    <h3 class="text-center mt-4">Your Total is: <span id="totalCost">$0.00</span></h3>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
